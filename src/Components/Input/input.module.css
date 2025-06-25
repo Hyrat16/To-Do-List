@@ -1,0 +1,46 @@
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.inputArea {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form > input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+form > button {
+  padding: 10px 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+form > button:hover {
+  background: #0056b3;
+}
+
+form > button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
