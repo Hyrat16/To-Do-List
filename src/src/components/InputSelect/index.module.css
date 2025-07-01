@@ -1,0 +1,33 @@
+.taskInputSection {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.taskInput {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
+  color: var(--text-color-dark);
+}
+
+.taskInput::placeholder {
+  color: var(--text-color-light);
+}
+
+.addButton {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+  filter: brightness(0.9); /* Alternativa para escurecer em CSS puro */
+}
