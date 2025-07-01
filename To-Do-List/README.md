@@ -1,0 +1,1 @@
+This project reflects a step-by-step learning journey in programming, with a concise structure focused on mastering pure Node.js. The goal is to build a solid foundation of core concepts, enabling a deeper understanding of how applications work under the hood before moving on to more advanced frameworks and libraries in
