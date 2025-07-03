@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react";
 import { Header } from "./components/header";
-// Importe 'Task' aqui, agora que ela é exportada de InputSelect/index.tsx
 import { AddNewTaskBar } from "./components/InputSelect";
 import type { Task } from "./components/InputSelect";
 import { getTaskList } from "./functions/getFunctions";
 import { RenderListTask } from "./components/renderListTask";
 import { Footer } from "./components/footer";
+import { deleteTaskList } from "./functions/deleteFunctions";
 
 function App() {
-  // RENOMEADO: De 'task' (singular) para 'tasks' (plural)
   const [tasks, setTasks] = useState<Task[]>([]);
 
   async function loadInitialTasks() {
     const data = await getTaskList();
-    // 'data' aqui provavelmente é um array de objetos com 'id' e 'task' (string),
-    // mas pode não ter 'completed'. Garanta que todos tenham 'completed: false'.
+
     setTasks(data.map((item: any) => ({ ...item, completed: false })) || []);
   }
 
@@ -39,6 +37,16 @@ function App() {
     a.task.localeCompare(b.task)
   );
 
+  const handleDeleteTask = async (id: string) => {
+    try {
+      await deleteTaskList(id);
+
+      setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+    } catch (error) {
+      console.error("Falha ao deletar a tarefa no frontend:", error);
+    }
+  };
+
   return (
     <>
       <div className="todoContainer">
@@ -49,6 +57,7 @@ function App() {
         <RenderListTask
           listTask={alphabeticalOrder}
           onToggleComplete={handleToggleComplete}
+          onDeleteTask={handleDeleteTask}
         ></RenderListTask>
 
         <Footer listTask={alphabeticalOrder}></Footer>

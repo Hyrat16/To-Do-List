@@ -8,7 +8,6 @@ export type FormData = {
 };
 
 export type Task = {
-  // Esta exportação já está correta
   id: string;
   task: string;
   completed: boolean;
