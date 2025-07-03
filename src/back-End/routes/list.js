@@ -1,5 +1,6 @@
 import { create } from "../controllers/taskList.js";
 import { getTaskList } from "../controllers/getTaskList.js";
+import { remove } from "../controllers/deleteID.js";
 
 export const TaskList = [
   {
@@ -7,11 +8,11 @@ export const TaskList = [
     path: "/tasks",
     controller: create,
   },
-  /* {
+  {
     method: "DELETE",
-    path: "/task/:id",
-    controller: create,
-  } */
+    path: "/tasks/:id",
+    controller: remove,
+  },
   {
     method: "GET",
     path: "/tasks",

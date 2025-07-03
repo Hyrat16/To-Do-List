@@ -40,13 +40,6 @@ body {
   margin: 0;
 }
 
-.todoFooter {
-  text-align: center;
-  margin-top: 20px;
-  color: var(--text-color-medium);
-  font-size: 0.9em;
-}
-
 /* Responsividade básica */
 @media (max-width: 600px) {
   .todoContainer {

@@ -15,11 +15,8 @@
     --completed-bg-color,
     #e0ffe0
   ); /* Adicionando uma variável para cor de fundo */
-  border-color: var(
-    --completed-border-color,
-    #a3e6a3
-  ); /* Adicionando uma variável para cor da borda */
-  opacity: 0.7; /* Tornar o item um pouco transparente */
+  border-color: var(--completed-border-color, #a3e6a3);
+  opacity: 0.7;
 }
 
 .todoItem:last-child,
@@ -64,7 +61,7 @@
 
 .checkboxChecked::after {
   content: "✔";
-  color: white;
+  color: rgb(167, 14, 14);
   font-size: 0.8em;
   line-height: 1;
 }
@@ -74,7 +71,7 @@
   color: var(--text-color-medium);
   font-size: 1.1em;
   line-height: 1.4;
-  transition: text-decoration 0.3s ease, color 0.3s ease, font-weight 0.3s ease; /* Adicionei font-weight */
+  transition: text-decoration 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
 }
 
 /* Estilo do texto da tarefa quando o item está COMPLETO */
@@ -101,25 +98,19 @@
 
 /* --- NOVOS ESTILOS PARA QUANDO O ITEM ESTÁ 'ATIVO' (CLICADO) --- */
 .itemAtivo {
-  /* Propriedades base de destaque (do exemplo anterior) */
   background-color: var(--highlight-background-color, #fff3cd);
   border-left: 5px solid var(--highlight-border-color, #ffc107);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 
-  /* Propriedades integradas do .todoItemCompleted */
-  /* Ajuste a opacidade para que "ativo" se destaque, mas também possa simular um "concluído" */
-  opacity: 0.85; /* Um pouco de opacidade para mostrar que está "processado" */
+  opacity: 0.85;
 }
 
 /* Ajustes no texto dentro do item ativo */
 .itemAtivo .taskText {
-  font-weight: bold; /* Texto em negrito (já estava) */
-  color: var(
-    --highlight-text-color,
-    #856404
-  ); /* Cor mais escura para o texto (já estava) */
-  text-decoration: underline; /* Adiciona sublinhado para indicar que foi "interagido" */
+  font-weight: bold;
+  color: var(--highlight-text-color, #856404);
+  text-decoration: underline;
 }
 
 .itemAtivo .checkBox {
